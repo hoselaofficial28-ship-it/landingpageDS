@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Pajangan dashboard mobil angsa kristal premium berputar otomatis dengan tenaga surya. Elegan, tanpa baterai, dan eksklusif dari Hosela Ornament Dashboard.">
+  <meta name="keywords" content="angsa kristal, pajangan mobil, dashboard mewah, hiasan mobil berputar, solar putar, Hosela Ornament">
+  <meta name="author" content="Hosela Ornament">
+  <title>Hosela Ornament | Angsa Kristal Premium Dashboard</title>
+  <!-- Google Fonts + Font Awesome 6 (Free) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FEFCF8;
+      color: #2C2C2C;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Background Emblem Angsa Mewah Bergerak */
+    .moving-emblem-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .emblem {
+      position: absolute;
+      opacity: 0.08;
+      font-size: clamp(100px, 15vw, 280px);
+      color: #D4AF37;
+      animation: floatEmblem 20s infinite ease-in-out;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .emblem-1 {
+      top: 10%;
+      left: -5%;
+      animation-duration: 22s;
+      animation-delay: 0s;
+    }
+    .emblem-2 {
+      bottom: 15%;
+      right: -3%;
+      animation-duration: 25s;
+      animation-delay: 2s;
+      transform: scale(0.9);
+    }
+    .emblem-3 {
+      top: 40%;
+      right: 5%;
+      animation-duration: 18s;
+      animation-delay: 4s;
+      opacity: 0.05;
+    }
+
+    @keyframes floatEmblem {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(20px, -25px) rotate(6deg); }
+      66% { transform: translate(-15px, 15px) rotate(-4deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+
+    /* Main Content higher z-index */
+    .main-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      margin: 80px 0;
+    }
+
+    /* Typography */
+    h1, h2, h3, .heading-font {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #1e1e1e;
+    }
+
+    h2 span {
+      color: #C6A43F;
+      border-bottom: 2px solid #E4C580;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* Buttons & CTAs */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, #D4AF37 0%, #B88A1A 100%);
+      color: #1E1A0C;
+      font-weight: 700;
+      padding: 14px 38px;
+      border-radius: 48px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.25);
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px rgba(180, 130, 30, 0.35);
+      background: linear-gradient(135deg, #E2C164 0%, #C69C2E 100%);
+      color: #0f0d07;
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      border: 1.5px solid rgba(212, 175, 55, 0.7);
+      color: #D4AF37;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    /* Header simple */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #B48C3A, #E7C783);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo small {
+      font-size: 0.7rem;
+      display: block;
+      color: #9B7E40;
+      letter-spacing: 2px;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+      margin: 30px 0 50px;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-content h1 {
+      font-size: 3.3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #25211a;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+      color: #4a4640;
+    }
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 48px;
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease;
+    }
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Benefit Cards */
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .benefit-card {
+      background: #FFFFFF;
+      padding: 30px 20px;
+      border-radius: 32px;
+      text-align: center;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(212, 175, 55, 0.1);
+      transition: all 0.3s;
+    }
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.07), 0 0 0 1px rgba(212,175,55,0.3);
+    }
+    .benefit-icon {
+      font-size: 2.8rem;
+      color: #D4AF37;
+      margin-bottom: 20px;
+    }
+    .benefit-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .benefit-card p {
+      color: #5f5b55;
+    }
+
+    /* Video Section Mid */
+    .video-preview {
+      background: radial-gradient(circle at 20% 30%, #FDF8F0, #FAF5EA);
+      border-radius: 60px;
+      padding: 55px 30px;
+      text-align: center;
+      margin: 80px 0;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.8), 0 20px 35px -10px rgba(0,0,0,0.05);
+    }
+    .video-container {
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+    }
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    /* Product Showcase Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 35px;
+      margin-top: 40px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.02), 0 0 0 1px #ece7df;
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15), 0 0 0 1px #D4AF37;
+    }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .product-card h4 {
+      margin: 18px 0 6px;
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+    .badge {
+      background: #D4AF37;
+      color: #1E1A0C;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 5px 12px;
+      border-radius: 60px;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    /* Why Choose Us 2 cols */
+    .why-grid {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+    .why-image {
+      flex: 1;
+    }
+    .why-image img {
+      width: 100%;
+      border-radius: 48px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    }
+    .why-list {
+      flex: 1;
+    }
+    .why-list ul {
+      list-style: none;
+    }
+    .why-list li {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.05rem;
+    }
+    .why-list li i {
+      font-size: 1.7rem;
+      color: #D4AF37;
+      width: 40px;
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    .testi-card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 30px 25px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 0 1px #F1ECD9;
+      transition: all 0.3s;
+    }
+    .testi-card:hover {
+      box-shadow: 0 18px 32px rgba(0,0,0,0.05), 0 0 0 1px #D4AF37;
+    }
+    .stars {
+      color: #D4AF37;
+      margin-bottom: 18px;
+      letter-spacing: 3px;
+    }
+    .testi-text {
+      font-style: italic;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      color: #2e2b26;
+    }
+    .testi-name {
+      font-weight: 600;
+      color: #B88A1A;
+    }
+
+    /* CTA Final dark */
+    .cta-final {
+      background: linear-gradient(115deg, #1D1B17 0%, #2A2721 100%);
+      border-radius: 60px;
+      text-align: center;
+      padding: 70px 25px;
+      margin: 80px 0;
+    }
+    .cta-final h2 {
+      color: #FEF6E6;
+      margin-bottom: 20px;
+    }
+    .cta-final p {
+      color: #CBC3B0;
+      margin-bottom: 35px;
+      font-size: 1.1rem;
+    }
+
+    /* Sticky WA */
+    .wa-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+      z-index: 99;
+      text-decoration: none;
+    }
+    .wa-float:hover {
+      transform: scale(1.08);
+      background: #20b859;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-top: 1px solid #e9e2d4;
+      color: #918b7c;
+      font-size: 0.8rem;
+    }
+
+    /* Animations fade in scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 0.8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content p {
+        text-align: center;
+      }
+      .why-grid {
+        flex-direction: column;
+      }
+      .btn-gold {
+        padding: 12px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Background Angsa Mewah Bergerak (Emblem) -->
+<div class="moving-emblem-bg">
+  <div class="emblem emblem-1">
+    <i class="fas fa-crown"></i>   <!-- seperti emblem kebanggaan, bisa ganti ke swan jika ada, pakai icon alt -->
+  </div>
+  <div class="emblem emblem-2">
+    <svg width="140" height="140" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 20 L65 40 L60 45 L50 35 L40 45 L35 40 L50 20Z" fill="#D4AF37" stroke="#D4AF37" stroke-width="1.5"/>
+      <path d="M30 55 L70 55 L65 75 L35 75 L30 55Z" fill="#D4AF37" fill-opacity="0.7"/>
+      <circle cx="50" cy="68" r="3" fill="#2C2C2C"/>
+    </svg>
+  </div>
+  <div class="emblem emblem-3">
+    <i class="fas fa-feather-alt"></i>
+  </div>
+</div>
+
+<div class="main-content">
+  <div class="container">
+    <!-- Navbar sederhana -->
+    <div class="navbar">
+      <div class="logo">HOSELA<br><small>Ornament Dashboard</small></div>
+      <div></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="container fade-up">
+    <div class="hero">
+      <div class="hero-content">
+        <h1>Sentuhan Mewah untuk Dashboard Mobil Anda</h1>
+        <p>Pajangan dashboard mobil motif angsa kristal premium yang dapat berputar otomatis dengan tenaga cahaya matahari, tanpa baterai.</p>
+        <a href="#" class="btn-gold" id="heroCta">Pesan Sekarang <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <!-- GANTI URL GAMBAR PRODUK UTAMA DI SINI -->
+        <img src="https://drive.google.com/file/d/1nu3zW1xpd9NpNdn_q7h4SkYGlivIoyub/view?usp=sharing" id="mainProductImg">
+      </div>
+    </div>
+  </div>
+
+  <!-- Benefit Section -->
+  <div class="container fade-up">
+    <h2><span>Keunggulan Tak Tertandingi</span></h2>
+    <div class="benefit-grid">
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-sun"></i></div><h3>Berputar Otomatis</h3><p>Dengan cahaya matahari, angsa berputar anggun menghadirkan kedamaian.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-battery-full"></i></div><h3>Tanpa Baterai</h3><p>Solar cell canggih, ramah lingkungan dan minim perawatan.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-gem"></i></div><h3>Mewah & Eksklusif</h3><p>Kristal premium & detail emas, mempercantik interior mobil Anda.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-car"></i></div><h3>Elegance on The Road</h3><p>Simbol kemewahan yang memancarkan kelas dan gaya.</p></div>
+    </div>
+  </div>
+
+  <!-- VIDEO SECTION (Area Tengah) -->
+  <div class="container fade-up">
+    <div class="video-preview">
+      <h2 style="margin-bottom: 1rem;"><span>Gerakan Anggun yang Memukau</span></h2>
+      <p style="margin-bottom: 30px; color: #5A5040;">Saksikan bagaimana kristal berputar lembut di bawah sinar matahari</p>
+      <div class="video-container">
+        <!-- GANTI URL VIDEO PREMIUM DI SINI (MP4) -->
+        <video autoplay muted loop playsinline>
+          <source src="https://cdn.coverr.co/videos/coverr-sparkling-diamond-157734/coverr-sparkling-diamond-157734.mp4" type="video/mp4">
+          Browser Anda tidak mendukung video premium.
+        </video>
+      </div>
+      <p style="margin-top: 28px; font-size: 0.9rem; color: #9B8E76;"><i class="fas fa-play-circle"></i> Putaran halus & elegan — tingkatkan kesan mewah setiap perjalanan</p>
+    </div>
+  </div>
+
+  <!-- PRODUCT SHOWCASE (Warna + best seller) -->
+  <div class="container fade-up">
+    <h2><span>Koleksi Warna Eksklusif</span></h2>
+    <div class="product-grid" id="productGrid">
+      <!-- card 1 merah -->
+      <div class="product-card"><img class="product-img" src="https://placehold.co/400x400/F5E8E0/C0392B?text=Red+Crystal+Swan&font=playfair" alt="Angsa Merah"><h4>Ruby Red</h4><div class="badge">Best Seller</div></div>
+      <div class="product-card"><img class="product-img" src="https://placehold.co/400x400/FAEFF5/DB7093?text=Pink+Blossom&font=playfair" alt="Angsa Pink"><h4>Rose Quartz</h4><div class="badge">Best Seller</div></div>
+      <div class="product-card"><img class="product-img" src="https://placehold.co/400x400/FFFFFF/E0D5B9?text=Pure+White&font=playfair" alt="Angsa Putih"><h4>Pearl White</h4><div></div></div>
+      <div class="product-card"><img class="product-img" src="https://placehold.co/400x400/DDEEF9/2C6E9E?text=Sapphire+Blue&font=playfair" alt="Angsa Biru"><h4>Sapphire Blue</h4><div class="badge">Best Seller</div></div>
+      <div class="product-card"><img class="product-img" src="https://placehold.co/400x400/F3EAF9/8E6CB2?text=Amethyst+Purple&font=playfair" alt="Angsa Ungu"><h4>Royal Purple</h4><div></div></div>
+    </div>
+    <p style="text-align:center; margin-top:20px; font-size:13px; color:#b28b4b;"><i class="fas fa-sync-alt"></i> Setiap warna mencerminkan kemewahan & eksklusivitas</p>
+  </div>
+
+  <!-- WHY CHOOSE US SECTION -->
+  <div class="container fade-up">
+    <div class="why-grid">
+      <div class="why-image">
+        <!-- GANTI URL GAMBAR ALTERNATIF PRODUK UNTUK SECTION INI -->
+        <img src="https://placehold.co/600x800/F9F3EA/BF9A5A?text=Detail+Premium+Swan&font=playfair" alt="Detail Angsa Kristal">
+      </div>
+      <div class="why-list">
+        <h2 style="text-align: left;"><span>Kenapa Memilih Pajangan Angsa Premium Kami?</span></h2>
+        <ul>
+          <li><i class="fas fa-feather-alt"></i> Desain angsa kristal yang elegan dan unik</li>
+          <li><i class="fas fa-chart-line"></i> Menambah kesan mewah pada interior mobil</li>
+          <li><i class="fas fa-solar-panel"></i> Berputar otomatis saat terkena cahaya matahari</li>
+          <li><i class="fas fa-plug"></i> Tidak memerlukan baterai / listrik sama sekali</li>
+          <li><i class="fas fa-gift"></i> Cocok untuk hadiah premium dan kolektor interior mobil</li>
+        </ul>
+        <a href="#" class="btn-gold" style="margin-top: 20px; display: inline-block;">Pesan Sekarang <i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL SECTION -->
+  <div class="container fade-up">
+    <h2><span>Testimonial Pelanggan Kami</span></h2>
+    <div class="testimonial-grid">
+      <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="testi-text">"Dashboard mobil jadi terlihat jauh lebih elegan. Semua teman saya kagum dengan angsa berputar ini!"</div><div class="testi-name">— Niluh, Jakarta</div></div>
+      <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="testi-text">"Unik dan berputar tanpa baterai, keren banget! Sekarang setiap perjalanan terasa istimewa."</div><div class="testi-name">— Dimas, Surabaya</div></div>
+      <div class="testi-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><div class="testi-text">"Bikin interior mobil terasa lebih mahal dan eksklusif. Kualitas kristal premium banget."</div><div class="testi-name">— Sarah, Bandung</div></div>
+    </div>
+  </div>
+
+  <!-- CTA FINAL SECTION -->
+  <div class="container fade-up">
+    <div class="cta-final">
+      <h2>Upgrade Interior Mobil Anda Sekarang</h2>
+      <p>Miliki pajangan dashboard angsa kristal premium yang elegan dan berkelas. Stok terbatas, pesan hari ini!</p>
+      <a href="#" class="btn-gold" style="background: #B8860B; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">Saya Mau Pesan <i class="fas fa-angle-right"></i></a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Hosela Ornament Dashboard — Kemewahan dalam setiap detail. All trademarks and images placeholder dapat diganti melalui URL.</p>
+  </div>
+</div>
+
+<!-- Sticky WhatsApp Button -->
+<a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20produk%20Angsa%20Kristal%20Hosela%20Ornament" class="wa-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+  // Intersection Observer untuk animasi fade-up saat scroll
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
+  
+  fadeElements.forEach(el => observer.observe(el));
+  
+  // Trigger visible for elements already view (just in case)
+  window.addEventListener('load', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+        observer.unobserve(el);
+      }
+    });
+  });
+
+  // Semua tombol CTA diarahkan ke nomor WA (contoh)
+  const ctaButtons = document.querySelectorAll('.btn-gold');
+  const waLink = 'https://wa.me/6281234567890?text=Halo%20Hosela%2C%20saya%20tertarik%20dengan%20angsa%20kristal%20dashboard%20mewah';
+  ctaButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(waLink, '_blank');
+    });
+  });
+  // Hero CTA + final all use WA
+  document.querySelectorAll('a[href="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      if(anchor.classList.contains('btn-gold') || anchor.classList.contains('btn-outline-light')) {
+        e.preventDefault();
+        window.open(waLink, '_blank');
+      }
+    });
+  });
+</script>
+
+<!-- Tanda untuk penggantian gambar :
+  - Gambar produk utama : cari id="mainProductImg" / url di hero-image
+  - Gambar product showcase : class="product-img" masing-masing bisa diganti URL
+  - Gambar why choose us : .why-image img 
+  - Video : source video di .video-container video > source ganti url 
+  Semua gambar & video diberi komentar HTML mudah di-cari.
+-->
+</body>
+</html>
