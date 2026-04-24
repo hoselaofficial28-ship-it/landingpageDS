@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hosela Ornament | Angsa Kristal Premium</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -21,22 +21,22 @@
     h2 { font-size: 2.3rem; margin-bottom: 2rem; text-align: center; color: #1e1e1e; }
     h2 span { color: #C6A43F; border-bottom: 2px solid #E4C580; display: inline-block; padding-bottom: 5px; }
     .btn-gold { display: inline-block; background: linear-gradient(135deg, #D4AF37, #B88A1A); color: #1E1A0C; font-weight: 700; padding: 14px 38px; border-radius: 48px; text-decoration: none; transition: 0.3s; box-shadow: 0 8px 20px rgba(212,175,55,0.25); text-align: center; }
-    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 28px rgba(180,130,30,0.35); background: linear-gradient(135deg,#E2C164,#C69C2E); }
+    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 16px 28px rgba(180,130,30,0.35); }
     .hero { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; margin: 30px 0 50px; }
     .hero-content { flex: 1; }
     .hero-content h1 { font-size: 3.3rem; line-height: 1.2; margin-bottom: 20px; }
     .hero-image { flex: 1; text-align: center; }
-    .hero-image img { max-width: 100%; border-radius: 48px; box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2); transition: 0.4s; }
+    .hero-image img { max-width: 100%; border-radius: 48px; box-shadow: 0 30px 40px -20px rgba(0,0,0,0.2); }
     .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 30px; margin-top: 20px; }
-    .benefit-card { background: #FFF; padding: 30px 20px; border-radius: 32px; text-align: center; box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 0 1px rgba(212,175,55,0.1); transition: 0.3s; }
-    .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(0,0,0,0.07), 0 0 0 1px rgba(212,175,55,0.3); }
+    .benefit-card { background: #FFF; padding: 30px 20px; border-radius: 32px; text-align: center; box-shadow: 0 12px 28px rgba(0,0,0,0.03); transition: 0.3s; }
+    .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(0,0,0,0.07); }
     .benefit-icon { font-size: 2.8rem; color: #D4AF37; margin-bottom: 20px; }
     .video-preview { background: radial-gradient(circle at 20% 30%, #FDF8F0, #FAF5EA); border-radius: 60px; padding: 55px 30px; text-align: center; margin: 80px 0; }
-    .video-container { max-width: 900px; margin: 0 auto; border-radius: 40px; overflow: hidden; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); }
-    video { width: 100%; display: block; }
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
     .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr)); gap: 35px; margin-top: 40px; }
-    .product-card { background: white; border-radius: 32px; overflow: hidden; transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.02); text-align: center; padding-bottom: 1.5rem; }
-    .product-card:hover { transform: translateY(-8px); box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15), 0 0 0 1px #D4AF37; }
+    .product-card { background: white; border-radius: 32px; overflow: hidden; transition: 0.3s; text-align: center; padding-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
+    .product-card:hover { transform: translateY(-8px); box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15); }
     .product-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; }
     .badge { background: #D4AF37; color: #1E1A0C; font-size: 0.7rem; font-weight: bold; padding: 5px 12px; border-radius: 60px; display: inline-block; margin-top: 6px; }
     .why-grid { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
@@ -47,8 +47,7 @@
     .why-list li { margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
     .why-list li i { font-size: 1.7rem; color: #D4AF37; width: 40px; }
     .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 35px; }
-    .testi-card { background: #FFF; border-radius: 28px; padding: 30px 25px; box-shadow: 0 12px 28px rgba(0,0,0,0.03), 0 0 0 1px #F1ECD9; transition: 0.3s; }
-    .testi-card:hover { box-shadow: 0 18px 32px rgba(0,0,0,0.05), 0 0 0 1px #D4AF37; }
+    .testi-card { background: #FFF; border-radius: 28px; padding: 30px 25px; box-shadow: 0 12px 28px rgba(0,0,0,0.03); }
     .stars { color: #D4AF37; margin-bottom: 18px; letter-spacing: 3px; }
     .cta-final { background: linear-gradient(115deg, #1D1B17, #2A2721); border-radius: 60px; text-align: center; padding: 70px 25px; margin: 80px 0; }
     .cta-final h2 { color: #FEF6E6; }
@@ -69,8 +68,7 @@
   <div class="emblem emblem-3"><i class="fas fa-gem"></i></div>
 </div>
 
-<div class="main-content" id="app">
-  <!-- Navbar -->
+<div class="main-content">
   <div class="container">
     <div style="display:flex; justify-content:space-between; padding:24px 0">
       <div style="font-family:'Playfair Display'; font-size:1.5rem; font-weight:700; background:linear-gradient(135deg,#B48C3A,#E7C783); -webkit-background-clip:text; background-clip:text; color:transparent">
@@ -79,19 +77,13 @@
     </div>
   </div>
 
-  <!-- HERO akan diisi JS -->
+  <!-- Semua section akan diisi oleh JavaScript -->
   <div class="container fade-up" id="heroSection"></div>
-  <!-- BENEFIT -->
   <div class="container fade-up" id="benefitSection"></div>
-  <!-- VIDEO -->
   <div class="container fade-up" id="videoSection"></div>
-  <!-- PRODUCT SHOWCASE -->
   <div class="container fade-up" id="productSection"></div>
-  <!-- WHY CHOOSE US -->
   <div class="container fade-up" id="whySection"></div>
-  <!-- TESTIMONIAL -->
   <div class="container fade-up" id="testimonialSection"></div>
-  <!-- CTA FINAL -->
   <div class="container fade-up" id="ctaSection"></div>
   
   <div class="footer"><p>© 2025 Hosela Ornament Dashboard — Kemewahan dalam setiap detail.</p></div>
@@ -100,195 +92,195 @@
 <a href="#" class="wa-float" id="waButton" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-  // ===================== KONFIGURASI =====================
-  // ★★★ EDIT SEMUA GAMBAR, VIDEO, TEKS HANYA DI SINI ★★★
-  const config = {
-    // Hero Section
-    heroTitle: "Sentuhan Mewah untuk Dashboard Mobil Anda",
-    heroSubtitle: "Pajangan dashboard mobil motif angsa kristal premium yang dapat berputar otomatis dengan tenaga cahaya matahari, tanpa baterai.",
-    heroImage: "https://raw.githubusercontent.com/hoselaofficial28-ship-it/landingpageDS/refs/heads/main/2.jpg", // GANTI LINK GAMBAR UTAMA DI SINI
-    ctaText: "Pesan Sekarang",
+// ============================================================
+// ★★★ KONFIGURASI - HANYA EDIT DI BAWAH INI ★★★
+// ============================================================
+const config = {
+    // === GAMBAR UTAMA (HERO) ===
+    heroImage: "https://raw.githubusercontent.com/hoselaofficial28-ship-it/landingpageDS/refs/heads/main/2.jpg",
     
-    // Video
-    videoUrl: "<div class="video-container" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:32px;">
-  <iframe src="https://go.screenpal.com/player/cOfZf0nOa9U" 
-          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" 
-          allowfullscreen>
-  </iframe>
-</div>", // GANTI LINK VIDEO MP4 DI SINI
+    // === VIDEO SCREENPAL (cukup link player, contoh di bawah) ===
+    videoUrl: "https://go.screenpal.com/player/cOfZf0nOa9U",
     
-    // Benefit Cards (4 items)
-    benefits: [
-      { icon: "fas fa-sun", title: "Berputar Otomatis", desc: "Dengan cahaya matahari" },
-      { icon: "fas fa-battery-full", title: "Tanpa Baterai", desc: "Solar cell canggih" },
-      { icon: "fas fa-gem", title: "Mewah & Eksklusif", desc: "Kristal premium" },
-      { icon: "fas fa-car", title: "Elegance on The Road", desc: "Simbol kemewahan" }
-    ],
+    // === GAMBAR UNTUK BAGIAN "WHY CHOOSE US" ===
+    whyImage: "https://placehold.co/600x800/F9F3EA/BF9A5A?text=Detail+Premium+Swan",
     
-    // Product Showcase (5 warna)
+    // === 5 WARNA PRODUK (ganti link gambar masing-masing) ===
     products: [
-      { name: "Ruby Red", image: "https://placehold.co/400x400/F5E8E0/C0392B?text=Red+Swan", bestSeller: true },
-      { name: "Rose Quartz", image: "https://placehold.co/400x400/FAEFF5/DB7093?text=Pink+Swan", bestSeller: true },
-      { name: "Pearl White", image: "https://placehold.co/400x400/FFFFFF/E0D5B9?text=White+Swan", bestSeller: false },
-      { name: "Sapphire Blue", image: "https://placehold.co/400x400/DDEEF9/2C6E9E?text=Blue+Swan", bestSeller: true },
-      { name: "Royal Purple", image: "https://placehold.co/400x400/F3EAF9/8E6CB2?text=Purple+Swan", bestSeller: false }
+        { name: "Ruby Red", image: "https://placehold.co/400x400/F5E8E0/C0392B?text=Red+Swan", bestSeller: true },
+        { name: "Rose Quartz", image: "https://placehold.co/400x400/FAEFF5/DB7093?text=Pink+Swan", bestSeller: true },
+        { name: "Pearl White", image: "https://placehold.co/400x400/FFFFFF/E0D5B9?text=White+Swan", bestSeller: false },
+        { name: "Sapphire Blue", image: "https://placehold.co/400x400/DDEEF9/2C6E9E?text=Blue+Swan", bestSeller: true },
+        { name: "Royal Purple", image: "https://placehold.co/400x400/F3EAF9/8E6CB2?text=Purple+Swan", bestSeller: false }
     ],
     
-    // Why Choose Us
-    whyImage: "https://placehold.co/600x800/F9F3EA/BF9A5A?text=Detail+Premium+Swan", // GANTI LINK GAMBAR WHY CHOOSE DI SINI
-    whyTitle: "Kenapa Memilih Pajangan Angsa Premium Kami?",
-    whyPoints: [
-      "Desain angsa kristal yang elegan dan unik",
-      "Menambah kesan mewah pada interior mobil",
-      "Berputar otomatis saat terkena cahaya",
-      "Tidak memerlukan baterai / listrik",
-      "Cocok untuk hadiah premium dan kolektor"
-    ],
-    
-    // Testimonial
-    testimonials: [
-      { text: "Dashboard mobil jadi terlihat jauh lebih elegan", name: "Niluh, Jakarta", rating: 5 },
-      { text: "Unik dan berputar tanpa baterai, keren banget", name: "Dimas, Surabaya", rating: 5 },
-      { text: "Bikin interior mobil terasa lebih mahal", name: "Sarah, Bandung", rating: 5 }
-    ],
-    
-    // CTA Final
-    ctaFinalTitle: "Upgrade Interior Mobil Anda Sekarang",
-    ctaFinalSubtitle: "Miliki pajangan dashboard angsa kristal premium yang elegan dan berkelas.",
-    ctaFinalButton: "Saya Mau Pesan",
-    
-    // WhatsApp Number (ganti dengan nomor asli)
+    // === NOMOR WHATSAPP ===
     whatsappNumber: "6281234567890",
     whatsappMessage: "Halo Hosela, saya tertarik dengan Angsa Kristal Premium"
-  };
-  // =================== END KONFIGURASI ===================
+};
+// ============================================================
+// JANGAN UBAH APAPUN DI BAWAH INI (kecuali Anda sudah paham)
+// ============================================================
 
-  // Fungsi untuk render semua section
-  function renderPage() {
+// Teks tetap (tidak perlu diubah, tapi bisa jika mau)
+const heroTitle = "Sentuhan Mewah untuk Dashboard Mobil Anda";
+const heroSubtitle = "Pajangan dashboard mobil motif angsa kristal premium yang dapat berputar otomatis dengan tenaga cahaya matahari, tanpa baterai.";
+const ctaText = "Pesan Sekarang";
+const benefits = [
+    { icon: "fas fa-sun", title: "Berputar Otomatis", desc: "Dengan cahaya matahari" },
+    { icon: "fas fa-battery-full", title: "Tanpa Baterai", desc: "Solar cell canggih" },
+    { icon: "fas fa-gem", title: "Mewah & Eksklusif", desc: "Kristal premium" },
+    { icon: "fas fa-car", title: "Elegance on The Road", desc: "Simbol kemewahan" }
+];
+const whyPoints = [
+    "Desain angsa kristal yang elegan dan unik",
+    "Menambah kesan mewah pada interior mobil",
+    "Berputar otomatis saat terkena cahaya",
+    "Tidak memerlukan baterai / listrik",
+    "Cocok untuk hadiah premium dan kolektor"
+];
+const testimonials = [
+    { text: "Dashboard mobil jadi terlihat jauh lebih elegan", name: "Niluh, Jakarta", rating: 5 },
+    { text: "Unik dan berputar tanpa baterai, keren banget", name: "Dimas, Surabaya", rating: 5 },
+    { text: "Bikin interior mobil terasa lebih mahal", name: "Sarah, Bandung", rating: 5 }
+];
+const ctaFinalTitle = "Upgrade Interior Mobil Anda Sekarang";
+const ctaFinalSubtitle = "Miliki pajangan dashboard angsa kristal premium yang elegan dan berkelas.";
+const ctaFinalButton = "Saya Mau Pesan";
+
+// Render semua section
+function render() {
     // Hero
     document.getElementById("heroSection").innerHTML = `
-      <div class="hero">
-        <div class="hero-content">
-          <h1>${config.heroTitle}</h1>
-          <p style="margin:20px 0">${config.heroSubtitle}</p>
-          <a href="#" class="btn-gold cta-link">${config.ctaText}</a>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>${heroTitle}</h1>
+                <p style="margin:20px 0">${heroSubtitle}</p>
+                <a href="#" class="btn-gold cta-link">${ctaText}</a>
+            </div>
+            <div class="hero-image">
+                <img src="${config.heroImage}" alt="Angsa Kristal">
+            </div>
         </div>
-        <div class="hero-image">
-          <img src="${config.heroImage}" alt="Angsa Kristal Premium">
-        </div>
-      </div>
     `;
     
     // Benefit
     document.getElementById("benefitSection").innerHTML = `
-      <h2><span>Keunggulan Premium</span></h2>
-      <div class="benefit-grid">
-        ${config.benefits.map(b => `
-          <div class="benefit-card">
-            <div class="benefit-icon"><i class="${b.icon}"></i></div>
-            <h3>${b.title}</h3>
-            <p>${b.desc}</p>
-          </div>
-        `).join('')}
-      </div>
+        <h2><span>Keunggulan Premium</span></h2>
+        <div class="benefit-grid">
+            ${benefits.map(b => `
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="${b.icon}"></i></div>
+                    <h3>${b.title}</h3>
+                    <p>${b.desc}</p>
+                </div>
+            `).join('')}
+        </div>
     `;
     
-    // Video
+    // Video (menggunakan iframe ScreenPal)
+    let videoHtml = '';
+    if (config.videoUrl.includes('screenpal.com')) {
+        videoHtml = `
+            <div class="video-wrapper">
+                <iframe src="${config.videoUrl}" allowfullscreen></iframe>
+            </div>
+        `;
+    } else {
+        // fallback jika bukan link screenpal
+        videoHtml = `
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                    <source src="${config.videoUrl}" type="video/mp4">
+                </video>
+            </div>
+        `;
+    }
     document.getElementById("videoSection").innerHTML = `
-      <div class="video-preview">
-        <h2 style="margin-bottom:1rem"><span>Gerakan Anggun yang Memukau</span></h2>
-        <div class="video-container">
-          <video autoplay muted loop playsinline>
-            <source src="${config.videoUrl}" type="video/mp4">
-          </video>
+        <div class="video-preview">
+            <h2 style="margin-bottom:1rem"><span>Gerakan Anggun yang Memukau</span></h2>
+            ${videoHtml}
+            <p style="margin-top:20px">Lihat kemewahan angsa kristal berputar lembut</p>
         </div>
-        <p style="margin-top:20px">Lihat kemewahan angsa kristal berputar lembut</p>
-      </div>
     `;
     
     // Product Showcase
     document.getElementById("productSection").innerHTML = `
-      <h2><span>Koleksi Warna Eksklusif</span></h2>
-      <div class="product-grid">
-        ${config.products.map(p => `
-          <div class="product-card">
-            <img class="product-img" src="${p.image}" alt="${p.name}">
-            <h4>${p.name}</h4>
-            ${p.bestSeller ? '<div class="badge">Best Seller</div>' : ''}
-          </div>
-        `).join('')}
-      </div>
+        <h2><span>Koleksi Warna Eksklusif</span></h2>
+        <div class="product-grid">
+            ${config.products.map(p => `
+                <div class="product-card">
+                    <img class="product-img" src="${p.image}" alt="${p.name}">
+                    <h4>${p.name}</h4>
+                    ${p.bestSeller ? '<div class="badge">Best Seller</div>' : ''}
+                </div>
+            `).join('')}
+        </div>
     `;
     
     // Why Choose Us
     document.getElementById("whySection").innerHTML = `
-      <div class="why-grid">
-        <div class="why-image"><img src="${config.whyImage}" alt="Detail Premium"></div>
-        <div class="why-list">
-          <h2 style="text-align:left"><span>${config.whyTitle}</span></h2>
-          <ul>
-            ${config.whyPoints.map(point => `<li><i class="fas fa-check-circle"></i> ${point}</li>`).join('')}
-          </ul>
-          <a href="#" class="btn-gold cta-link">Pesan Sekarang</a>
+        <div class="why-grid">
+            <div class="why-image"><img src="${config.whyImage}" alt="Detail Premium"></div>
+            <div class="why-list">
+                <h2 style="text-align:left"><span>Kenapa Memilih Pajangan Angsa Premium Kami?</span></h2>
+                <ul>
+                    ${whyPoints.map(p => `<li><i class="fas fa-check-circle"></i> ${p}</li>`).join('')}
+                </ul>
+                <a href="#" class="btn-gold cta-link">Pesan Sekarang</a>
+            </div>
         </div>
-      </div>
     `;
     
     // Testimonial
     document.getElementById("testimonialSection").innerHTML = `
-      <h2><span>Testimonial Pelanggan Kami</span></h2>
-      <div class="testimonial-grid">
-        ${config.testimonials.map(t => `
-          <div class="testi-card">
-            <div class="stars">${'<i class="fas fa-star"></i>'.repeat(t.rating)}</div>
-            <div class="testi-text">"${t.text}"</div>
-            <div class="testi-name">— ${t.name}</div>
-          </div>
-        `).join('')}
-      </div>
+        <h2><span>Testimonial Pelanggan Kami</span></h2>
+        <div class="testimonial-grid">
+            ${testimonials.map(t => `
+                <div class="testi-card">
+                    <div class="stars">${'<i class="fas fa-star"></i>'.repeat(t.rating)}</div>
+                    <div class="testi-text">"${t.text}"</div>
+                    <div class="testi-name">— ${t.name}</div>
+                </div>
+            `).join('')}
+        </div>
     `;
     
     // CTA Final
     document.getElementById("ctaSection").innerHTML = `
-      <div class="cta-final">
-        <h2>${config.ctaFinalTitle}</h2>
-        <p>${config.ctaFinalSubtitle}</p>
-        <a href="#" class="btn-gold cta-link">${config.ctaFinalButton}</a>
-      </div>
+        <div class="cta-final">
+            <h2>${ctaFinalTitle}</h2>
+            <p>${ctaFinalSubtitle}</p>
+            <a href="#" class="btn-gold cta-link">${ctaFinalButton}</a>
+        </div>
     `;
     
     // Set WhatsApp link
     const waLink = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(config.whatsappMessage)}`;
     document.getElementById("waButton").href = waLink;
     
-    // Event listener untuk semua tombol CTA
+    // Event listener semua tombol CTA
     document.querySelectorAll(".cta-link").forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        window.open(waLink, "_blank");
-      });
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.open(waLink, "_blank");
+        });
     });
-  }
-  
-  // Animasi fade-in saat scroll
-  const fadeElements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
+}
+
+// Animasi fade in saat scroll
+const faders = document.querySelectorAll('.fade-up');
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+faders.forEach(el => obs.observe(el));
+
+render();
+setTimeout(() => {
+    faders.forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
     });
-  }, { threshold: 0.15 });
-  fadeElements.forEach(el => observer.observe(el));
-  
-  // Jalankan render
-  renderPage();
-  
-  // Trigger animasi untuk yang sudah terlihat
-  setTimeout(() => {
-    fadeElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) el.classList.add('visible');
-    });
-  }, 100);
+}, 100);
 </script>
 </body>
 </html>
