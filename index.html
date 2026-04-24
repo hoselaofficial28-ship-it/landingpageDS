@@ -31,10 +31,36 @@
     .benefit-card { background: #FFF; padding: 30px 20px; border-radius: 32px; text-align: center; box-shadow: 0 12px 28px rgba(0,0,0,0.03); transition: 0.3s; }
     .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px rgba(0,0,0,0.07); }
     .benefit-icon { font-size: 2.8rem; color: #D4AF37; margin-bottom: 20px; }
-    .video-preview { background: radial-gradient(circle at 20% 30%, #FDF8F0, #FAF5EA); border-radius: 60px; padding: 55px 30px; text-align: center; margin: 80px 0; }
-    /* Container video dengan rasio 9:16 (vertikal seperti TikTok) */
+    .video-preview { background: radial-gradient(circle at 20% 30%, #FDF8F0, #FAF5EA); border-radius: 60px; padding: 55px 30px; text-align: center; margin: 80px 0; position: relative; }
     .video-wrapper { position: relative; padding-bottom: 177.78%; height: 0; border-radius: 32px; overflow: hidden; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2); background: #FAF5EA; }
     .video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+    /* Tombol speaker mewah */
+    .sound-toggle {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .sound-toggle i {
+      font-size: 1.4rem;
+      color: #D4AF37;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    .sound-toggle:hover {
+      background: rgba(0,0,0,0.7);
+      transform: scale(1.05);
+    }
     .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px,1fr)); gap: 35px; margin-top: 40px; }
     .product-card { background: white; border-radius: 32px; overflow: hidden; transition: 0.3s; text-align: center; padding-bottom: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
     .product-card:hover { transform: translateY(-8px); box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15); }
@@ -58,7 +84,7 @@
     .footer { text-align: center; padding: 40px 20px 20px; border-top: 1px solid #e9e2d4; color: #918b7c; font-size: 0.8rem; }
     .fade-up { opacity: 0; transform: translateY(35px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
-    @media (max-width: 768px) { .container { padding: 0 20px; } h2 { font-size: 1.8rem; } .hero-content h1 { font-size: 2.4rem; } .hero { flex-direction: column-reverse; text-align: center; } .why-grid { flex-direction: column; } }
+    @media (max-width: 768px) { .container { padding: 0 20px; } h2 { font-size: 1.8rem; } .hero-content h1 { font-size: 2.4rem; } .hero { flex-direction: column-reverse; text-align: center; } .why-grid { flex-direction: column; } .sound-toggle { width: 36px; height: 36px; bottom: 12px; right: 12px; } .sound-toggle i { font-size: 1.1rem; } }
   </style>
 </head>
 <body>
@@ -78,7 +104,7 @@
     </div>
   </div>
 
-  <!-- Semua section diisi JS -->
+  <!-- Section container -->
   <div class="container fade-up" id="heroSection"></div>
   <div class="container fade-up" id="benefitSection"></div>
   <div class="container fade-up" id="videoSection"></div>
@@ -96,17 +122,16 @@
 // ========================== KONFIGURASI ==========================
 // ★★★ HANYA EDIT BAGIAN INI ★★★
 const config = {
-    // Gambar utama hero (ganti dengan link gambar Anda)
+    // Gambar utama hero
     heroImage: "https://raw.githubusercontent.com/hoselaofficial28-ship-it/landingpageDS/refs/heads/main/2.jpg",
     
-    // VIDEO MP4 (upload dulu ke GitHub, lalu masukkan raw link di sini)
-    // Contoh: "https://raw.githubusercontent.com/username/repo/branch/video.mp4"
-    videoUrl: "https://github.com/hoselaofficial28-ship-it/landingpageDS/raw/refs/heads/main/ssstik.io_1776850597518%20(1)%20(1).mp4",  // ← GANTI DENGAN LINK MP4 ANDA
+    // Video MP4 (RAW link dari GitHub atau cloud)
+    videoUrl: "https://raw.githubusercontent.com/hoselaofficial28-ship-it/landingpageDS/refs/heads/main/ssstik.io_1776850597518%20(1)%20(1).mp4",
     
-    // Gambar di bagian "Why Choose Us"
+    // Gambar "Why Choose Us"
     whyImage: "https://placehold.co/600x800/F9F3EA/BF9A5A?text=Detail+Premium+Swan",
     
-    // Produk (ganti link gambar masing-masing)
+    // Produk
     products: [
         { name: "Ruby Red", image: "https://placehold.co/400x400/F5E8E0/C0392B?text=Red+Swan", bestSeller: true },
         { name: "Rose Quartz", image: "https://placehold.co/400x400/FAEFF5/DB7093?text=Pink+Swan", bestSeller: true },
@@ -116,13 +141,12 @@ const config = {
     ],
     
     // WhatsApp
-    whatsappNumber: "6281533100348",
+    whatsappNumber: "6281234567890",
     whatsappMessage: "Halo Hosela, saya tertarik dengan Angsa Kristal Premium"
 };
 // ================================================================
-// JANGAN UBAH DI BAWAH INI (kecuali Anda paham JavaScript)
-// ================================================================
 
+// Teks tetap (bisa diubah jika mau)
 const heroTitle = "Sentuhan Mewah untuk Dashboard Mobil Anda";
 const heroSubtitle = "Pajangan dashboard mobil motif angsa kristal premium yang dapat berputar otomatis dengan tenaga cahaya matahari, tanpa baterai.";
 const ctaText = "Pesan Sekarang";
@@ -177,19 +201,45 @@ function render() {
         </div>
     `;
     
-    // Video - menggunakan tag video murni autoplay loop muted tanpa kontrol
-    document.getElementById("videoSection").innerHTML = `
+    // Video dengan tombol speaker
+    const videoSection = document.getElementById("videoSection");
+    videoSection.innerHTML = `
         <div class="video-preview">
             <h2 style="margin-bottom:1rem"><span>Gerakan Anggun yang Memukau</span></h2>
-            <div class="video-wrapper">
-                <video autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload">
+            <div class="video-wrapper" id="videoWrapper">
+                <video id="premiumVideo" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload">
                     <source src="${config.videoUrl}" type="video/mp4">
                     Browser tidak mendukung video.
                 </video>
+                <div id="soundToggle" class="sound-toggle">
+                    <i class="fas fa-volume-mute"></i>
+                </div>
             </div>
             <p style="margin-top:20px">Lihat kemewahan angsa kristal berputar lembut</p>
         </div>
     `;
+    
+    // Setup tombol suara setelah render
+    setTimeout(() => {
+        const video = document.getElementById("premiumVideo");
+        const toggleBtn = document.getElementById("soundToggle");
+        if (video && toggleBtn) {
+            const icon = toggleBtn.querySelector("i");
+            toggleBtn.addEventListener("click", () => {
+                if (video.muted) {
+                    video.muted = false;
+                    icon.classList.remove("fa-volume-mute");
+                    icon.classList.add("fa-volume-up");
+                } else {
+                    video.muted = true;
+                    icon.classList.remove("fa-volume-up");
+                    icon.classList.add("fa-volume-mute");
+                }
+            });
+            // Pastikan video autoplay berjalan (browser mungkin ngeblok jika tidak ada interaksi)
+            video.play().catch(e => console.log("Autoplay di-block browser:", e));
+        }
+    }, 100);
     
     // Product
     document.getElementById("productSection").innerHTML = `
@@ -242,9 +292,11 @@ function render() {
         </div>
     `;
     
+    // WA link
     const waLink = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(config.whatsappMessage)}`;
     document.getElementById("waButton").href = waLink;
     
+    // Semua tombol CTA
     document.querySelectorAll(".cta-link").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -253,7 +305,7 @@ function render() {
     });
 }
 
-// Animasi
+// Animasi fade-in
 const faders = document.querySelectorAll('.fade-up');
 const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); });
